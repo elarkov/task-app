@@ -1,31 +1,8 @@
-import React from "react";
-import ReactDOM from "react-dom";
-import './styles/index.css';
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-} from "react-router-dom";
-import Header from './components/header.js';
-import Dashboard from './components/dashboard.js';
+import React from 'react';
+import ReactDom from 'react-dom';
+
+import App from './components/app/app.js';
 
 
+ReactDom.render(<App/>, document.getElementById('root'));
 
-const App = () => {
-  return (
-		<div>
-			<div className="wrapper">
-				<Header/>
-				<Router>
-					<Switch>
-						<Route path="/dashboard">
-							<Dashboard/>
-						</Route>
-					</Switch>
-				</Router>
-			</div>
-		</div>
-	)
-};
-
-ReactDOM.render(<App />, document.querySelector("#root"));
