@@ -4,10 +4,10 @@ import TaskItem from './../task-item';
 import './tasks-details.css';
 
 
-const TasksDetails = ({tasks}) => {
+const TasksDetails = ({tasks, deleteHandler}) => {
 	const tasksList = tasks.map((el) => 
 		<li key={el.id} className="list-item__item list-group-item">
-			<TaskItem task={el}/>
+			<TaskItem task={el} onDeleteClick={deleteHandler}/>
 		</li>
 	);
 	return (

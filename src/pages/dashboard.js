@@ -4,7 +4,7 @@ import React from "react";
 //   Switch,
 //   Route,
 // } from "react-router-dom";
-import {getTasks, addTask} from '../api/server.js';
+import {getTasks, addTask, deleteTask} from '../api/server.js';
 import CreateTask from '../components/create-task/create-task.js';
 import TasksDetails from '../components/tasks-details/tasks-details.js';
 
@@ -37,7 +37,7 @@ export default class Dashboard extends React.Component {
 							<div className="col-lg-12">
 							<h3 className="bg-primary">Список задач</h3>
 								<CreateTask submitHandler={addTask}/>
-								<TasksDetails tasks={this.state.tasks}/>
+								<TasksDetails tasks={this.state.tasks} deleteHandler={deleteTask}/>
 							</div>
 						</div>
 					</div>

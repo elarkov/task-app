@@ -5,7 +5,7 @@ const getTasks = async () => {
 };
 
 const addTask = (formData) => {
-	console.log(formData);
+	// console.log(formData);
 	fetch('http://localhost:3000/tasks', {
 		method: 'POST',
 		body: new FormData(formData),
@@ -13,8 +13,12 @@ const addTask = (formData) => {
 	
 }
 // const editTask
-// const deleteTask
+const deleteTask = (id) => {
+	fetch('http://localhost:3000/tasks/' + id, {
+		method: 'DELETE'
+	})
+};
 
 
 
-export {getTasks, addTask};
+export {getTasks, addTask, deleteTask};
