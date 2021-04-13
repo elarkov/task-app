@@ -4,21 +4,41 @@ const getTasks = async () => {
 	return res;
 };
 
-const addTask = (formData) => {
-	// console.log(formData);
-	fetch('http://localhost:3000/tasks', {
+
+const addTask = (formData, onSuccess) => {
+	fetch('http://localhost:3000/tasks', 
+	{
 		method: 'POST',
-		body: new FormData(formData),
+		headers: {
+			'Content-Type': 'application/json',
+		},
+		body: JSON.stringify(formData),
+	}).then((response) => {
+		if(response.ok) {
+			onSuccess();
+		}
 	});
-	
 }
-// const editTask
+
+const updateTask = (id, formData) => {
+	fetch('http://localhost:3000/tasks' + id, {
+		method: 'PUT',
+		headers: {
+			'Content-Type': 'application/json',
+		},
+		body: JSON.stringify(formData)
+	})
+}
+
+
 const deleteTask = (id) => {
 	fetch('http://localhost:3000/tasks/' + id, {
 		method: 'DELETE'
+	}).then(res => {
+		console.log(res.statusText);
 	})
 };
 
 
 
-export {getTasks, addTask, deleteTask};
+export {getTasks, addTask, deleteTask, updateTask};
