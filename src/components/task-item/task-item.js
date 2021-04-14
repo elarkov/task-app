@@ -6,10 +6,43 @@ class TaskItem extends React.Component {
 
 	constructor(props) {
 		super(props);
+
 		this.state = {
 			isEdit: false
 		}
 	}
+
+	handleEditClick = () => {
+		this.setState({
+			isEdit: true
+		})
+	};
+
+	handleCancelEdit = () => {
+		this.setState({
+			isEdit: false
+		})
+	}
+
+
+	handleSave = (evt) => {
+		evt.preventDefault();
+
+		const {task, updateTask, getTaskList} = this.props;
+
+		const newTask = {
+			id: task.id,
+			text: evt.target.parentElement.elements.text.value
+		};
+		
+		this.setState({
+			isEdit: false,
+		})
+
+		updateTask(newTask.id, newTask, getTaskList);
+	}
+
+
 
 	deleteItem = () => {
 		const {task, onDeleteClick, removeItem} = this.props;
@@ -30,7 +63,7 @@ class TaskItem extends React.Component {
 				<>
 					<span className="list-item__text">{task.text}</span>
 					<div className="action">
-						<button className="action__button btn btn-info">
+						<button className="action__button btn btn-info" onClick={this.handleEditClick}>
 							<i className="fas fa-edit"></i>
 						</button>
 						<button className="action__button btn btn-info" onClick={this.deleteItem}>
@@ -46,9 +79,13 @@ class TaskItem extends React.Component {
 					className="create-new__input form-control" 
 					name="text" 
 					type="text"
+					ref="editInput"
 				/>
-				<button className="action__button btn btn-info">
-					<i className="fas fa-edit"></i>
+				<button className="action__button btn btn-info" type="submit" onClick={this.handleSave}>
+					Добавить
+				</button>
+				<button className="action__button btn btn-info" type="submit" onClick={this.handleCancelEdit}>
+					<i className="fas fa-times"></i>
 				</button>
 			</form>
 			)

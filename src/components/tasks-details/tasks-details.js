@@ -5,13 +5,13 @@ import './tasks-details.css';
 
 
 
-const TasksDetails = ({tasks, removeTask, removeItem, updateTask}) => {
+const TasksDetails = ({tasks, removeTask, getTaskList, removeItem, updateTask}) => {
 
 	
 	
 	const tasksList = tasks.map((el) => 
 		<li key={el.id} className="list-item__item list-group-item">
-			<TaskItem task={el} removeItem={removeItem} updateTask={updateTask} onDeleteClick={removeTask}/>
+			<TaskItem getTaskList={getTaskList} task={el} removeItem={removeItem} updateTask={updateTask} onDeleteClick={removeTask}/>
 		</li>
 	);
 

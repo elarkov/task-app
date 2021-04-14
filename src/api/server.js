@@ -20,13 +20,17 @@ const addTask = (formData, onSuccess) => {
 	});
 }
 
-const updateTask = (id, formData) => {
-	fetch('http://localhost:3000/tasks' + id, {
+const updateTask = (id, formData, onDone) => {
+	fetch('http://localhost:3000/tasks/' + id, {
 		method: 'PUT',
 		headers: {
 			'Content-Type': 'application/json',
 		},
 		body: JSON.stringify(formData)
+	}).then((response) => {
+		if(response.ok){
+			onDone();
+		}
 	})
 }
 

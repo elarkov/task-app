@@ -9,3 +9,7 @@
 .action__button {
 	margin: 5px;
 }
+
+.create-new__form {
+	width: 100%;
+}

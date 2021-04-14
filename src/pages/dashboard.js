@@ -17,7 +17,6 @@ export default class Dashboard extends React.Component {
 
 		this.state = {
 			messageHeader: "Список задач",
-			message: ['devid', 'jina'],
 			tasks: [
 				{
 					id: '',
@@ -57,7 +56,7 @@ export default class Dashboard extends React.Component {
 							<div className="col-lg-12">
 							<h3 className="bg-primary">{this.state.messageHeader}</h3>
 								<CreateTask getTaskList={this.getTaskList} submitHandler={addTask}/>
-								<TasksDetails updateTask={updateTask} tasks={this.state.tasks} removeItem={this.removeItem} removeTask={deleteTask} />
+								<TasksDetails getTaskList={this.getTaskList} updateTask={updateTask} tasks={this.state.tasks} removeItem={this.removeItem} removeTask={deleteTask} />
 							</div>
 						</div>
 					</div>

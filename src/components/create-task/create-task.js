@@ -15,7 +15,6 @@ const CreateTask = ({submitHandler, getTaskList}) =>  {
 
 		submitHandler(newTask, getTaskList);
 		evt.target.reset();
-
 	}
 
 
