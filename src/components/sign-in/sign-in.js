@@ -1,16 +1,17 @@
 import React from 'react';
 import './sign-in.css';
 
-const SignIn = ({getListUsers, addUser}) => {
+const SignIn = ({getUser, addUser}) => {
 
 	const onSubmitUser = (evt) => {
 		evt.preventDefault();
+
 		const newUser = {
 			login: evt.target.elements.user.value,
 			password: evt.target.elements.pass.value
 		}
 
-		addUser(newUser, getListUsers);
+		addUser(newUser, getUser);
 		evt.target.reset();
 	};
 

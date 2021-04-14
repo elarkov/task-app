@@ -12,12 +12,8 @@ const App = () => {
 	return (
 		<>
 			<Switch>
-				<Route path="/login">
-					<Login/>
-				</Route>
-				<Route exact path="/">
-					<Dashboard/>
-				</Route>
+				<Route path="/login" component={Login}/>
+				<Route exact path="/" component={Dashboard}/>
 			</Switch>
 		</>
 	)
