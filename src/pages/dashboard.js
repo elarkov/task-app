@@ -1,9 +1,5 @@
 import React from "react";
-// import {
-//   BrowserRouter as Router,
-//   Switch,
-//   Route,
-// } from "react-router-dom";
+
 import {getTasks, addTask, updateTask, deleteTask} from '../api/server.js';
 import CreateTask from '../components/create-task/create-task.js';
 import TasksDetails from '../components/tasks-details/tasks-details.js';
@@ -49,19 +45,17 @@ export default class Dashboard extends React.Component {
 	
  render() {
 		return (
-			<div>
-				<div className="wrapper">
-					<div className="container">
-						<div className="row">
-							<div className="col-lg-12">
-							<h3 className="bg-primary">{this.state.messageHeader}</h3>
-								<CreateTask getTaskList={this.getTaskList} submitHandler={addTask}/>
-								<TasksDetails getTaskList={this.getTaskList} updateTask={updateTask} tasks={this.state.tasks} removeItem={this.removeItem} removeTask={deleteTask} />
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
+			<>
+			<h3 className="bg-primary">{this.state.messageHeader}</h3>
+			<CreateTask getTaskList={this.getTaskList} submitHandler={addTask}/>
+			<TasksDetails 
+				getTaskList={this.getTaskList} 
+				updateTask={updateTask} 
+				tasks={this.state.tasks} 
+				removeItem={this.removeItem} 
+				removeTask={deleteTask} 
+			/>
+			</>			
 		)
 	}
 

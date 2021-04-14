@@ -3,19 +3,30 @@
     {
       "id": 1,
       "login": "D2T2",
-      "pass": "12345"
+      "password": "12345"
     },
     {
       "id": 2,
       "login": "D3T3",
-      "pass": "123"
+      "password": "123"
+    },
+    {
+      "login": "Вася",
+      "password": "qwerty",
+      "id": 4
+    },
+    {
+      "login": "Gregory",
+      "password": "qwerty3",
+      "id": 5
+    },
+    {
+      "login": "Василий",
+      "password": "йцукен78",
+      "id": 6
     }
   ],
   "tasks": [
-    {
-      "id": 2,
-      "text": "погулять с собакой"
-    },
     {
       "id": 3,
       "text": "Сходить на набережную"
