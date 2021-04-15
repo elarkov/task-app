@@ -11,29 +11,9 @@
       "password": "123"
     },
     {
-      "login": "Вася",
-      "password": "qwerty",
-      "id": 4
-    },
-    {
-      "login": "Gregory",
-      "password": "qwerty3",
-      "id": 5
-    },
-    {
-      "login": "Василий",
-      "password": "йцукен78",
-      "id": 6
-    },
-    {
-      "login": "John Doe",
-      "password": "qwerty789",
-      "id": 7
-    },
-    {
-      "login": "Василий",
-      "password": "йцукен",
-      "id": 8
+      "login": "D45F4",
+      "password": "123",
+      "id": 3
     }
   ],
   "tasks": [

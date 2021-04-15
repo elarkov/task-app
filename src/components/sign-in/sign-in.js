@@ -1,27 +1,33 @@
 import React from 'react';
+import { addUser } from '../../api/server-users';
 import './sign-in.css';
 
-const SignIn = ({getUser, addUser}) => {
 
-	const onSubmitUser = (evt) => {
+export default class SignIn extends React.Component {
+	constructor(props) {
+		super(props);
+	}
+
+	handleSubmit = (evt) => {
 		evt.preventDefault();
+
+		const {getUser, addUser} = this.props;
 
 		const newUser = {
 			login: evt.target.elements.user.value,
 			password: evt.target.elements.pass.value
 		}
-
 		addUser(newUser, getUser);
-		evt.target.reset();
-	};
+	}
 
-	return(
-		<form className="login-form bg-danger" onSubmit={onSubmitUser} autoComplete="off">
-			<input type="text" name="user" placeholder="Введите имя"/>
-			<input type="password" name="pass" placeholder="Введите пароль"/>
-			<button className="login-form__btn btn btn-secondary" type="submit">Зарегистрироваться</button>
-		</form>
-	)
-};
+	render() {
 
-export default SignIn;
+		return(
+			<form className="login-form bg-danger" onSubmit={this.handleSubmit} autoComplete="off">
+				<input type="text" name="user" placeholder="Введите имя" required/>
+				<input type="password" name="pass" placeholder="Введите пароль" required/>
+				<button className="login-form__btn btn btn-secondary" type="submit">Зарегистрироваться</button>
+			</form>
+		)
+	}
+}
