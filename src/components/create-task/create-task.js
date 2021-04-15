@@ -8,10 +8,14 @@ const CreateTask = ({submitHandler, getTaskList}) =>  {
 
 	const onSubmit = (evt) => {
 		evt.preventDefault();
+		const id = localStorage.getItem('user_id');
+		console.log(id);
 
 		const newTask = {
-			text: evt.target.elements.text.value
+			text: evt.target.elements.text.value,
+			id: id
 		}
+		
 
 		submitHandler(newTask, getTaskList);
 		evt.target.reset();

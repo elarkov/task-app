@@ -13,20 +13,20 @@ export default class Dashboard extends React.Component {
 
 		this.state = {
 			messageHeader: "Список задач",
-			tasks: [
-				{
-					id: '',
-					text: ''
-				}
-			]
+			tasks: []
 		}
 	}
 
 	getTaskList = () => {
+		const id = localStorage.getItem('user_id');
 		getTasks()
 		.then((tasks) => {
+			const items = tasks.filter((task) => task.user_id === Number(id));
+			console.log(items);
+			console.log(id);
+			console.log(tasks);
 			this.setState({
-				tasks: tasks
+				tasks: items,
 			})
 		})
 	}
