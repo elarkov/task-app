@@ -14,18 +14,57 @@
       "login": "DR3DT2",
       "password": "321",
       "id": 3
+    },
+    {
+      "login": "DT34RT",
+      "password": "qwerty",
+      "id": 4
     }
   ],
   "tasks": [
     {
-      "id": 3,
-      "text": "Сходить на набережную",
-			"user_id": 1
+      "text": "To go to Paris",
+      "id": 6,
+      "user_id": 2
     },
     {
-      "text": "Сходить в столовую",
-      "id": 4,
-			"user_id": 3
+      "text": "sdfdsfds",
+      "user_id": "4",
+      "id": 8
+    },
+    {
+      "text": "Прыгнуть с парашюта",
+      "user_id": 4,
+      "id": 9
+    },
+    {
+      "text": "Поехатть в новосиб",
+      "user_id": 4,
+      "id": 12
+    },
+    {
+      "text": "Посетить Фудзиму",
+      "user_id": 3,
+      "isComplete": false,
+      "id": 14
+    },
+    {
+      "text": "Посмотреть на цветение Сакуры",
+      "user_id": 3,
+      "isComplete": false,
+      "id": 15
+    },
+    {
+      "text": "Поехать в японию",
+      "user_id": 1,
+      "isComplete": false,
+      "id": 16
+    },
+    {
+      "text": "task 23",
+      "user_id": 1,
+      "isComplete": false,
+      "id": 17
     }
   ]
 }

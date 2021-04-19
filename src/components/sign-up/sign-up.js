@@ -9,7 +9,6 @@ export default class SignUp extends React.Component {
 		super(props);
 	}
 
-
 	handleSubmit = (evt) => {
 		evt.preventDefault();
 
@@ -21,7 +20,7 @@ export default class SignUp extends React.Component {
 		}
 
 		const onSuccess = ()=>{
-			console.log('Вы успешно зарегались');
+			console.log('Вы успешно зарегистрировались');
 			history.push('/');
 		}
 
