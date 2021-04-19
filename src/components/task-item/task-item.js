@@ -8,8 +8,7 @@ class TaskItem extends React.Component {
 		super(props);
 
 		this.state = {
-			isEdit: false,
-			isComplete: false
+			isEdit: false
 		}
 	}
 
@@ -84,7 +83,7 @@ class TaskItem extends React.Component {
 		const {task, updateTask} = this.props;
 
 		const styleLineThough = {
-			textDecoration: this.state.isComplete ? "line-through" : null,
+			textDecoration: task.isComplete ? "line-through" : null,
 		}
 		
 		if (!this.state.isEdit) {
@@ -96,13 +95,13 @@ class TaskItem extends React.Component {
 					</span>
 					
 					<div className="action">
-						<button className="action__button btn btn-info" onClick={this.handleOnClickItem}>
+						<button className="action__button btn btn-success" onClick={this.handleOnClickItem}>
 							<i className="fas fa-check"></i>
 						</button>
 						<button className="action__button btn btn-info" onClick={this.handleEditClick}>
 							<i className="fas fa-edit"></i>
 						</button>
-						<button className="action__button btn btn-info" onClick={this.deleteItem}>
+						<button className="action__button btn btn-danger" onClick={this.deleteItem}>
 							<i className="fas fa-trash-alt"></i>
 						</button>
 					</div>

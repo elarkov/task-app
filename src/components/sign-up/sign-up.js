@@ -1,5 +1,6 @@
 import React from 'react';
 
+import {Link} from '../../router.js';
 import history from '../../history.js';
 import './sign-up.css';
 
@@ -47,7 +48,10 @@ export default class SignUp extends React.Component {
 				<input type="text" name="user" placeholder="Введите имя" required/>
 				<input type="password" name="pass" placeholder="Введите пароль" required/>
 				<input type="password" name="pass_two" placeholder="Введите пароль повторно" required/>
-				<button className="login-form__btn btn btn-secondary" type="submit">Зарегистрироваться</button>
+				<div className="login-form__bottom">
+					<button className="login-form__btn btn btn-secondary" type="submit">Зарегистрироваться</button>
+					<Link className="login-form__btn btn btn-primary" to="/login">Войти</Link>
+				</div>
 			</form>
 		)
 	}

@@ -61,9 +61,9 @@
       "id": 16
     },
     {
-      "text": "task 23",
+      "text": "Посетить гору Фудзима",
       "user_id": 1,
-      "isComplete": false,
+      "isComplete": true,
       "id": 17
     }
   ]

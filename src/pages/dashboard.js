@@ -24,7 +24,6 @@ export default class Dashboard extends React.Component {
 	}
 
 	getTaskList = () => {
-
 		const id = localStorage.getItem('user_id');
 
 		getTasks()
@@ -84,6 +83,24 @@ export default class Dashboard extends React.Component {
 		history.push('/login');
 	}
 
+	handleSortTasksDone = () => {
+		this.setState({
+			filterTasks: this.state.tasks.filter((item) => item.isComplete === true)
+		})
+	}
+
+	handleSortTaskUnComplete = () => {
+		this.setState({
+			filterTasks: this.state.tasks.filter((item) => item.isComplete === false)
+		})
+	}
+
+	handleSortTasksAll = () => {
+		this.setState({
+			filterTasks: this.state.tasks
+		})
+	}
+
 	
  render() {
 		return (
@@ -94,7 +111,7 @@ export default class Dashboard extends React.Component {
 					<div className="content__wrapper">
 						<TasksSearch onSearch={this.searchItem} />
 						<CreateTask getTaskList={this.getTaskList} submitHandler={addTask}/>
-						<TasksFilter/>
+						<TasksFilter onSortTasksAll={this.handleSortTasksAll} onSortTasksDone={this.handleSortTasksDone} onSortTasksUnComplete={this.handleSortTaskUnComplete}/>
 					</div>
 					<TasksDetails 
 						getTaskList={this.getTaskList} 
