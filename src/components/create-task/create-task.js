@@ -1,26 +1,14 @@
 import React from 'react';
 
+import { observer } from "mobx-react-lite";
+import { tasksStore } from "../../tasks-store.js";
+
 import './create-task.css';
 
 
-const CreateTask = ({submitHandler, getTaskList}) =>  {
+const CreateTask = observer(() =>  {
 
-	const onSubmit = (evt) => {
-		evt.preventDefault();
-
-		const id = localStorage.getItem('user_id');
-
-		const newTask = {
-			text: evt.target.elements.text.value,
-			user_id: Number(id),
-			isComplete: false
-		}
-		
-		submitHandler(newTask, getTaskList);
-		evt.target.reset();
-	}
-
-
+	const {onSubmit} = tasksStore;
 
 	return(
 		<div className="create-new">
@@ -35,6 +23,6 @@ const CreateTask = ({submitHandler, getTaskList}) =>  {
 			</form>
 		</div>
 	)
-}
+});
 
 export default CreateTask;

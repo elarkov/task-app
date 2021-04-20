@@ -21,18 +21,12 @@
       "id": 4
     },
     {
-      "login": "Baloo",
+      "login": "Владимир",
       "password": "123",
       "id": 5
     }
   ],
   "tasks": [
-    {
-      "text": "To go to Paris",
-      "id": 6,
-      "user_id": 2,
-      "isComplete": false
-    },
     {
       "text": "sdfdsfds",
       "user_id": "4",
@@ -79,16 +73,28 @@
       "id": 18
     },
     {
+      "id": 19,
       "text": "Поехать в Гренландию",
       "user_id": 2,
-      "isComplete": false,
-      "id": 19
+      "isComplete": true
     },
     {
       "text": "Записаться на треннинг",
       "user_id": 2,
       "isComplete": false,
       "id": 20
+    },
+    {
+      "text": "Поехать в горы",
+      "user_id": 2,
+      "isComplete": false,
+      "id": 21
+    },
+    {
+      "text": "Сделать по дому дела",
+      "user_id": 2,
+      "isComplete": false,
+      "id": 22
     }
   ]
 }

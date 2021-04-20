@@ -1,5 +1,5 @@
 import { makeAutoObservable } from "mobx";
-import { getTasks } from './api/server.js';
+import { getTasks, addTask } from './api/server.js';
 
 import history from './history.js';
 
@@ -58,6 +58,22 @@ class TasksStore {
 
 	handleSortTasksAll = () => {
 		this.filterTasks = this.tasks
+	}
+
+
+	onSubmit = (evt) => {
+		evt.preventDefault();
+
+		const id = localStorage.getItem('user_id');
+
+		const newTask = {
+			text: evt.target.elements.text.value,
+			user_id: Number(id),
+			isComplete: false
+		}
+		
+		addTask(newTask, this.getTaskList);
+		evt.target.reset();
 	}
 
 }

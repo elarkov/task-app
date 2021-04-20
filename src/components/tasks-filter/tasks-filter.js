@@ -1,20 +1,22 @@
 import React from 'react';
 
+import { observer } from "mobx-react-lite";
+import { tasksStore } from "../../tasks-store.js";
+
 import './tasks-filter.css';
 
-export default class TasksFilter extends React.Component {
 
+const TasksFilter = observer(() => {
 
+	const {handleSortTasksAll, handleSortTaskUnComplete, handleSortTasksDone} = tasksStore;
 
-	render() {
-		const {onSortTasksAll, onSortTasksDone, onSortTasksUnComplete} = this.props;
+	return (
+		<div className="ml-sm-2">
+			<button className="btn btn-light" onClick={handleSortTasksAll}>Все</button>
+			<button className="btn btn-light" onClick={handleSortTaskUnComplete}>Открытые</button>
+			<button className="btn btn-light" onClick={handleSortTasksDone}>Завершенные</button>
+		</div>
+	)
+});
 
-		return(
-			<div className="ml-sm-2">
-				<button className="btn btn-light" onClick={onSortTasksAll}>Все</button>
-				<button className="btn btn-light" onClick={onSortTasksUnComplete}>Открытые</button>
-				<button className="btn btn-light" onClick={onSortTasksDone}>Завершенные</button>
-			</div>
-		)
-	}
-}
+export default TasksFilter;

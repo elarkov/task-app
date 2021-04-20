@@ -26,10 +26,6 @@ const Dashboard = observer(() => {
 	/** destructuring methods and properties from store tasks-store.js*/
 	const {
 		getTaskList, 
-		searchItem, 
-		handleSortTasksAll, 
-		handleSortTasksDone, 
-		handleSortTaskUnComplete,
 		removeItem,
 		handleRemoveUser,
 		filterTasks
@@ -48,32 +44,21 @@ const Dashboard = observer(() => {
 		getListUsers()
 	}, []);
 
-		return (
-			<div className="content">
-				<div className="content__list">
-					<h3 className="content__header bg-primary">Список задач для {currentUser}</h3>
-					<div className="content__wrapper">
-						<TasksSearch onSearch={searchItem} />
-						<CreateTask getTaskList={getTaskList} submitHandler={addTask}/>
-						<TasksFilter 
-							onSortTasksAll={handleSortTasksAll} 
-							onSortTasksDone={handleSortTasksDone} 
-							onSortTasksUnComplete={handleSortTaskUnComplete}
-						/>
-					</div>
-					<TasksDetails 
-						getTaskList={getTaskList} 
-						updateTask={updateTask} 
-						tasks={filterTasks} 
-						removeItem={removeItem} 
-						removeTask={deleteTask}
-					/>
-					
+	return (
+		<div className="content">
+			<div className="content__list">
+				<h3 className="content__header bg-primary">Список задач для {currentUser}</h3>
+				<div className="content__wrapper">
+					<TasksSearch /> 
+					<CreateTask submitHandler={addTask}/>
+					<TasksFilter/>
 				</div>
-				<button className="btn btn-danger" onClick={handleRemoveUser}>Выйти</button>
+				<TasksDetails />
 			</div>
-		)
-	});
+			<button className="btn btn-danger" onClick={handleRemoveUser}>Выйти</button>
+		</div>
+	)
+});
 	
 export default Dashboard;
 

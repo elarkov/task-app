@@ -5,18 +5,15 @@ import './tasks-details.css';
 
 
 import { observer } from "mobx-react-lite";
+import { tasksStore } from "../../tasks-store.js";
 
-const TasksDetails = observer(({tasks, removeTask, getTaskList, removeItem, updateTask}) => {
+const TasksDetails = observer(() => {
 
-		const tasksList = tasks.map((el) => 
+	const {filterTasks} = tasksStore;
+
+		const tasksList = filterTasks.map((el) => 
 			<li key={el.id} className="list-item__item list-group-item">
-				<TaskItem 
-				getTaskList={getTaskList} 
-				task={el} 
-				removeItem={removeItem} 
-				updateTask={updateTask} 
-				onDeleteClick={removeTask}
-			/>
+				<TaskItem task={el} />
 			</li>
 		);
 
