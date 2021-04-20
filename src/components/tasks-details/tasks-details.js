@@ -4,8 +4,9 @@ import TaskItem from './../task-item';
 import './tasks-details.css';
 
 
+import { observer } from "mobx-react-lite";
 
-const TasksDetails = ({tasks, removeTask, getTaskList, removeItem, updateTask}) => {
+const TasksDetails = observer(({tasks, removeTask, getTaskList, removeItem, updateTask}) => {
 
 		const tasksList = tasks.map((el) => 
 			<li key={el.id} className="list-item__item list-group-item">
@@ -23,7 +24,8 @@ const TasksDetails = ({tasks, removeTask, getTaskList, removeItem, updateTask}) 
 			<ul className="list list-group">
 				{tasksList}
 			</ul>
+
 		)
-};
+});
 
 export default TasksDetails;

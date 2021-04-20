@@ -19,13 +19,19 @@
       "login": "DT34RT",
       "password": "qwerty",
       "id": 4
+    },
+    {
+      "login": "Baloo",
+      "password": "123",
+      "id": 5
     }
   ],
   "tasks": [
     {
       "text": "To go to Paris",
       "id": 6,
-      "user_id": 2
+      "user_id": 2,
+      "isComplete": false
     },
     {
       "text": "sdfdsfds",
@@ -57,14 +63,32 @@
     {
       "text": "Поехать в японию",
       "user_id": 1,
-      "isComplete": false,
+      "isComplete": true,
       "id": 16
     },
     {
       "text": "Посетить гору Фудзима",
       "user_id": 1,
-      "isComplete": true,
+      "isComplete": false,
       "id": 17
+    },
+    {
+      "text": "sdfdsf",
+      "user_id": 1,
+      "isComplete": false,
+      "id": 18
+    },
+    {
+      "text": "Поехать в Гренландию",
+      "user_id": 2,
+      "isComplete": false,
+      "id": 19
+    },
+    {
+      "text": "Записаться на треннинг",
+      "user_id": 2,
+      "isComplete": false,
+      "id": 20
     }
   ]
 }
