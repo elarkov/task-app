@@ -10,12 +10,21 @@ git clone SSH_адрес_проекта
 
 ```
 npm install
+```
+Установить json-server
 
+```
+npm install -g json-server
+```
+
+Запустить сервер
+
+```
+json-server --watch db.json
 ```
 
 Запустить проект
 
 ```
 npm start
-
 ```
