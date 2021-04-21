@@ -1,6 +1,8 @@
 import React from 'react';
 import {Redirect} from './router.js';
 
+
+
 class PrivateRoute extends React.Component {
 
 	render() {

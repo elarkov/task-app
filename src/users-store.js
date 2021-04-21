@@ -28,12 +28,12 @@ class UsersStore {
 		}
 
 		const onSuccess = () => {
-			console.log('Вы успешно зарегистрировались');
+			alert('Вы успешно зарегистрировались');
 			history.push('/');
 		}
 
 		if(newUser.password !== evt.target.elements.pass_two.value) {
-			console.log('Не совпадают пароли!');
+			alert('Не совпадают пароли!');
 		} else {
 			getUsers()
 			.then((users) => {
@@ -69,8 +69,6 @@ class UsersStore {
 				
 			})
 	}
-
-	
 
 }
 

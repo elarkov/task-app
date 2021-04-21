@@ -24,6 +24,16 @@
       "login": "Владимир",
       "password": "123",
       "id": 5
+    },
+    {
+      "login": "D4T4",
+      "password": "123",
+      "id": 6
+    },
+    {
+      "login": "D4D5",
+      "password": "123",
+      "id": 7
     }
   ],
   "tasks": [
@@ -91,9 +101,9 @@
       "id": 21
     },
     {
-      "text": "Сделать по дому дела",
+      "text": "task",
       "user_id": 2,
-      "isComplete": false,
+      "isComplete": true,
       "id": 22
     }
   ]
